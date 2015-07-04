@@ -1,0 +1,26 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: ''
+  rev: ''
+  saveCenter: true
+attribution: ''
+center: 
+  - 138.4497
+  - 35.012
+  - 6
+description: ''
+Layer: 
+  - id: land_polygons
+    Datasource: 
+      file: /Users/takeo/OSM/data/land_polygons/land_polygons.shp
+      type: shape
+    description: ''
+    fields: 
+      FID: Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 0
+name: ''
