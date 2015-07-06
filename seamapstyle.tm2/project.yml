@@ -10,9 +10,9 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - 0
-  - 20
-  - 3
+  - 139.7518
+  - 35.2699
+  - 13
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
@@ -20,7 +20,7 @@ layers: null
 maxzoom: 22
 minzoom: 0
 name: ''
-source: "mapbox:///mapbox.mapbox-streets-v5"
+source: "tmsource:///Users/takeo/OSM/MapboxStyle/seadata.tm2source"
 styles: 
   - semap.mss
 template: ''
