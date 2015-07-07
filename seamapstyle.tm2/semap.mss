@@ -1,6 +1,6 @@
 Map {
     font-directory: url("font/");
-//    background-color: #999;
+    background-color: #aaa;
 }
 
 @sans: "Noto Sans CJK JP Regular";
@@ -23,8 +23,6 @@ Map {
   polygon-fill: #168;
 }
 
-
-
 [zoom>9]
 #sealane::lane {
    [type="separation_zone"] {
@@ -45,6 +43,7 @@ Map {
  	  line-color:@sealane;
   } 
 }
+
 /*
 
 #aquaculture {
@@ -58,6 +57,7 @@ Map {
   line-color:#168;
 }
 
+*/
 
 #buoys::reflector[zoom>10]
 {
@@ -77,16 +77,18 @@ Map {
 }
 
 
-#buoys::float[zoom>10] {  
+#buoy::float[zoom>10] {  
   [type="buoy_safe_water"]{
      marker-allow-overlap: true; 
    	[seamark:buoy_safe_water:colour_pattern="vertical"]{
     	[seamark:buoy_safe_water:colour="red;white"] {
-        	marker-file: url(icons/Safe_Water_Pillar.png);
-        }  
+         	marker-file: url(img/Pillar_Red_White.svg);
+        } 
+      
         [seamark:topmark:shape="sphere"] {
-          	marker-file: url(icons/Safe_Water_Pillar_Sphere.png);
+  //        	marker-file: url(img/Pillar_Red_White.svg);
         }
+      
     }
     marker-transform: scale(0.21, 0.21); 
 
@@ -95,17 +97,22 @@ Map {
   [type="buoy_lateral"]{
      	 marker-allow-overlap: true;
     	[seamark:buoy_lateral:colour="green"]{
-          	marker-file: url(icons/Lateral_Pillar_Green.png);
+ //         	marker-file: url(img/Lateral_Pillar_Green.svg);
    	 	}
+    /*
         [seamark:buoy_lateral:colour="red"]{
-        	marker-file: url(icons/Lateral_Pillar_Red.png);
+        	marker-file: url(img/Lateral_Pillar_Red.svg);
       	}
+    */
     
     marker-transform: scale(0.25, 0.25);
   }
   
 }
-*/
+
+
+
+
 
 #buoy::lights[zoom>12] {
   marker-allow-overlap: true;
@@ -120,7 +127,6 @@ Map {
 			marker-file: url(img/Light_Red_120.svg);
   }
   [seamark:light:colour="yellow"] {
-    //FIXME
 			marker-file: url(img/Light_White_120.svg);
   }  
   marker-transform: scale(0.2, 0.2);
@@ -141,7 +147,7 @@ Map {
  }
 
 
-#buoys::fixme[zoom>12]
+#buoy::fixme[zoom>12]
 {
   	[seamark:fixme="please_fix_position"]{
      marker-allow-overlap: true;
@@ -155,38 +161,38 @@ Map {
 	}
 }
 
-/*
 
-#lights::color {
+
+#light::color {
   [zoom>10]{
     	marker-allow-overlap:true;
 
     	[seamark:light:colour="white"]{
-			marker-file: url(icons/Light_White_120.png);
+			marker-file: url(img/Light_White_060.svg);
       	}
     	[seamark:light:colour="green"]{
-			marker-file: url(icons/Light_Green_120.png);      		
+			marker-file: url(img/Light_Green_060.svg);      		
       	}
     	[seamark:light:colour="red"]{ 
-			marker-file: url(icons/Light_Red_120.png);      
+			marker-file: url(img/Light_Red_060.svg);      
       	}
 
-        marker-transform: scale(0.2, 0.2);
+        marker-transform: scale(0.1, 0.1);
      }
 }
 
-*/
 
-#lights::size{
+
+#light::size{
    [zoom>10][type="light_minor"] {
  		 	marker-allow-overlap:true;
     		marker-file: url(img/Light_Minor.svg);  
-      		marker-transform: scale(0.25, 0.25);
+      		marker-transform: scale(0.1, 0.1);
    }
   [zoom>8][type="light_major"]{
   	marker-allow-overlap:true;
   	marker-file: url(img/Light_Major.svg);
-    marker-transform: scale(0.35, 0.35);  
+    marker-transform: scale(0.15, 0.15);  
    }
 }
 
@@ -195,7 +201,7 @@ Map {
 #light_arc[zoom>8] {
   [seamark:light_radial<5]
   {
-    line-width: 0.3;
+    line-width: 0.5;
     line-dasharray: 2, 3;
     line-color: #777;
   }
@@ -248,7 +254,7 @@ Map {
   text-face-name:@sans;
  }
 
-#lights::fixme
+#light::fixme
 {
   [zoom>12][seamark:fixme="please_fix_position"]{
      marker-allow-overlap: true;
@@ -264,75 +270,81 @@ Map {
 
 
 
-/*
 
 #beacon::cardinal[zoom>10]
 {
   [seamark:beacon_cardinal:category="north"]
     {
       marker-allow-overlap: true;
-    	marker-file: url("icons/Cardinal_Beacon_North.png");
+    	marker-file: url("img/Top_North_Beacon.svg");
       	marker-transform: scale(0.25,0.25);
     }
    [seamark:beacon_cardinal:category="south"]
     {
       marker-allow-overlap: true;
-    	marker-file: url("icons/Cardinal_Beacon_South.png");
+    	marker-file: url("img/Top_South_Beacon.svg");
     }
     [seamark:beacon_cardinal:category="east"]
     {
       marker-allow-overlap: true;
-    	marker-file: url("icons/Cardinal_Beacon_East.png");
+    	marker-file: url("img/Top_East_Beacon.svg");
     }
     [seamark:beacon_cardinal:category="west"]
     {
       marker-allow-overlap: true;
-    	marker-file: url("icons/Cardinal_Beacon_West.png");
+    	marker-file: url("img/Top_West_Beacon.svg");
     }
     [zoom>10]
     {
-             	marker-transform: scale(0.2,0.2);
+             	marker-transform: scale(0.1,0.1);
     }
     [zoom>12]
     {
-          	marker-transform: scale(0.35,0.35);
+          	marker-transform: scale(0.15,0.15);
     }
 
 }
 
+
 #beacon::lateral[zoom>10]{
   [type="beacon_lateral"]{
      	 marker-allow-overlap: true;
-    	[seamark:beacon_lateral:colour="green"]{
-          	marker-file: url(icons/Lateral_Beacon_Green.png);
-      		[seamark:beacon_lateral:shape="tower"]{
-        		marker-file: url(icons/Lateral_Tower_Green.png);
-        	}
-   	 	}
-        [seamark:beacon_lateral:colour="red"]{
-        	marker-file: url(icons/Lateral_Beacon_Red.png);
-            [seamark:beacon_lateral:shape="tower"]{
-        		marker-file: url(icons/Lateral_Tower_Red.png);
-        	}
-      	}
+   		[seamark:beacon_lateral:shape="tower"]{
+       	  [seamark:beacon_lateral:colour="green"]{
+        	  marker-file: url(img/Tower_Green.svg);
+          }
+          [seamark:beacon_lateral:colour="red"]{
+        		marker-file: url(img/Tower_Red.svg);
+      	  }
+          [seamark:beacon_lateral:colour="red;white"]{
+  //      	marker-file: url(img/Tower_Red_White.svg);//todo
+      	  }
+          [seamark:beacon_lateral:colour="yellow"]{
+        	  marker-file: url(img/Tower_Yellow.svg);
+      	  }   
+        }
     
-        [seamark:beacon_lateral:colour="red;white"]{
-        	marker-file: url(icons/Beacon_Red_White.png);
-      //      [seamark:beacon_lateral:shape="tower"]{
-      //  		marker-file: url(icons/Lateral_Tower_White.png);
-      //  	} 
-      
-      	}
-         [seamark:beacon_lateral:colour="yellow"]{
-        	marker-file: url(icons/Beacon_Yellow.png);
-      	}
-    
-        marker-transform: scale(0.3, 0.3);
+       	[seamark:beacon_lateral:shape="pile"]{
+    	  [seamark:beacon_lateral:colour="green"]{
+          	marker-file: url(img/Beacon_Green.svg);
+   	 	  }
+          [seamark:beacon_lateral:colour="red"]{
+        	marker-file: url(img/Beacon_Red.svg);
+      	  }
+          [seamark:beacon_lateral:colour="red;white"]{
+        	marker-file: url(img/Beacon_Red_White.svg);
+          }
+          [seamark:beacon_lateral:colour="yellow"]{
+        	  marker-file: url(img/Beacon_Yellow.svg);
+      	  }
+        } 
+        marker-transform: scale(0.1, 0.1);
   }
+  
   [type="beacon_special_purpose"]{
     marker-allow-overlap: true;
     [seamark:beacon_special_purpose:colour="yellow"]{
-        	marker-file: url(icons/Beacon_Yellow.png);      
+        //	marker-file: url(icon/Beacon_Yellow.png);      
     }
     marker-transform: scale(0.3, 0.3); 
   }
@@ -340,18 +352,18 @@ Map {
   [type="beacon_safe_water"]{
      	 marker-allow-overlap: true;
     	[seamark:beacon_safe_water:colour="green"]{
-          	marker-file: url(icons/Lateral_Beacon_Green.png);
+          	marker-file: url(img/Beacon_Green.svg);
    	 	}
         [seamark:beacon_safe_water:colour="red"]{
-        	marker-file: url(icons/Lateral_Beacon_Red.png);
+        	marker-file: url(img/Beacon_Red.svg);
       	}
         [seamark:beacon_safe_water:colour="red;white"]{
-        	marker-file: url(icons/Beacon_Red_White.png);
+        	marker-file: url(img/Beacon_Red_White.svg);
       	}   
     	marker-transform: scale(0.3, 0.3);
   }  
 }
 
-*/
+
 
 
