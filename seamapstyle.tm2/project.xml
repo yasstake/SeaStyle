@@ -5,7 +5,7 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">139.5099,35.0086,9</Parameter>
+  <Parameter name="center">134.0744,33.8795,8</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
@@ -13,51 +13,15 @@
 </Parameters>
 
 
-<Style name="light-fixme" filter-mode="first">
+<Style name="land_polygon" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <Filter>([seamark:fixme] = 'please_fix_position')</Filter>
-    <MarkersSymbolizer allow-overlap="true" stroke="#ffff00" stroke-opacity="0.8" stroke-width="1" width="12" height="12" opacity="0.15" fill="#ffff00" />
+    <PolygonSymbolizer fill="#116688" />
+    <LineSymbolizer stroke-width="1" stroke="#116688" />
   </Rule>
 </Style>
-<Style name="light-size" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <Filter>([type] = 'light_major')</Filter>
-    <MarkersSymbolizer allow-overlap="true" file="img/Light_Major.svg" transform="scale(0.15,0.15)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'light_minor')</Filter>
-    <MarkersSymbolizer allow-overlap="true" file="img/Light_Minor.svg" transform="scale(0.1,0.1)" />
-  </Rule>
-</Style>
-<Style name="light-color" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([seamark:light:colour] = 'red')</Filter>
-    <MarkersSymbolizer file="img/Light_Red_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([seamark:light:colour] = 'green')</Filter>
-    <MarkersSymbolizer file="img/Light_Green_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([seamark:light:colour] = 'white')</Filter>
-    <MarkersSymbolizer file="img/Light_White_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.1,0.1)" />
-  </Rule>
-</Style>
-<Layer name="light"
+<Layer name="land_polygon"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>light-color</StyleName>
-    <StyleName>light-size</StyleName>
-    <StyleName>light-fixme</StyleName>  </Layer>
+    <StyleName>land_polygon</StyleName>  </Layer>
 
 <Style name="man_madeway" filter-mode="first">
   <Rule>
@@ -70,46 +34,47 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>man_madeway</StyleName>  </Layer>
 
+<Style name="sealane-lane" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <Filter>([type] = 'separation_lane')</Filter>
+    <LinePatternSymbolizer file="img/LaneArrow.svg" geometry-transform="scale(0.5,0.5)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([type] = 'separation_boundary')</Filter>
+    <LineSymbolizer stroke-width="3" stroke-dasharray="5, 5" stroke="#ddccee" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <Filter>([type] = 'separation_zone')</Filter>
+    <LineSymbolizer stroke="#ddccee" />
+  </Rule>
+</Style>
+<Layer name="sealane"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>sealane-lane</StyleName>  </Layer>
+
 <Style name="beacon-lateral" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'pile') and ([seamark:beacon_lateral:colour] = 'yellow')</Filter>
-    <MarkersSymbolizer file="img/Beacon_Yellow.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'pile') and ([seamark:beacon_lateral:colour] = 'red;white')</Filter>
-    <MarkersSymbolizer file="img/Beacon_Red_White.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'pile') and ([seamark:beacon_lateral:colour] = 'red')</Filter>
-    <MarkersSymbolizer file="img/Beacon_Red.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'pile') and ([seamark:beacon_lateral:colour] = 'green')</Filter>
-    <MarkersSymbolizer file="img/Beacon_Green.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower') and ([seamark:beacon_lateral:colour] = 'yellow')</Filter>
-    <MarkersSymbolizer file="img/Tower_Yellow.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
+    <MarkersSymbolizer file="img/Tower_Yellow.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower') and ([seamark:beacon_lateral:colour] = 'red;white')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.15,0.15)" />
+    <MarkersSymbolizer file="img/Beacon_Red_White.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower') and ([seamark:beacon_lateral:colour] = 'red')</Filter>
-    <MarkersSymbolizer file="img/Tower_Red.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
+    <MarkersSymbolizer file="img/Tower_Red.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower') and ([seamark:beacon_lateral:colour] = 'green')</Filter>
-    <MarkersSymbolizer file="img/Tower_Green.svg" allow-overlap="true" transform="scale(0.15,0.15)" />
+    <MarkersSymbolizer file="img/Tower_Green.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
@@ -133,13 +98,28 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'pile')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.15,0.15)" />
+    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower')</Filter>
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:shape] = 'tower')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.15,0.15)" />
+    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:colour] = 'yellow')</Filter>
+    <MarkersSymbolizer file="img/Beacon_Yellow.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:colour] = 'red;white')</Filter>
+    <MarkersSymbolizer file="img/Beacon_Red_White.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:colour] = 'red')</Filter>
+    <MarkersSymbolizer file="img/Beacon_Red.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([type] = 'beacon_lateral') and ([seamark:beacon_lateral:colour] = 'green')</Filter>
+    <MarkersSymbolizer file="img/Beacon_Green.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
@@ -154,7 +134,7 @@
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'beacon_lateral')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.15,0.15)" />
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
 </Style>
 <Style name="beacon-cardinal" filter-mode="first">
@@ -217,10 +197,6 @@
     <StyleName>beacon-cardinal</StyleName>
     <StyleName>beacon-lateral</StyleName>  </Layer>
 
-<Layer name="land_polygons"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
 <Style name="light_arc" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -229,7 +205,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['Y']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'yellow') and ([seamark:light_radial] &lt; 5)</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ffff00" stroke-dasharray="2, 3" />
@@ -241,7 +217,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['Y']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'yellow')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ffff00" />
@@ -253,7 +229,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['G']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'green') and ([seamark:light_radial] &lt; 5)</Filter>
     <LineSymbolizer stroke-width="3" stroke="#00ff00" stroke-dasharray="2, 3" />
@@ -265,7 +241,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['G']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'green')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#00ff00" />
@@ -277,7 +253,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['R']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'red') and ([seamark:light_radial] &lt; 5)</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ff0000" stroke-dasharray="2, 3" />
@@ -289,7 +265,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['R']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'red')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ff0000" />
@@ -301,7 +277,7 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['W']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'white') and ([seamark:light_radial] &lt; 5)</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ffff99" stroke-dasharray="2, 3" />
@@ -313,13 +289,13 @@
     <TextSymbolizer face-name="Noto Sans CJK JP Regular" placement="line" dy="10" orientation="180" ><![CDATA['W']]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([seamark:light_arc] = 'white')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#ffff99" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <Filter>([seamark:light_radial] &lt; 5)</Filter>
     <LineSymbolizer stroke-width="0.5" stroke-dasharray="2, 3" stroke="#777777" />
   </Rule>
@@ -327,27 +303,6 @@
 <Layer name="light_arc"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>light_arc</StyleName>  </Layer>
-
-<Style name="sealane-lane" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <Filter>([type] = 'separation_lane')</Filter>
-    <LinePatternSymbolizer file="img/LaneArrow.svg" geometry-transform="scale(0.5,0.5)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <Filter>([type] = 'separation_boundary')</Filter>
-    <LineSymbolizer stroke-width="3" stroke-dasharray="5, 5" stroke="#ddccee" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <Filter>([type] = 'separation_zone')</Filter>
-    <LineSymbolizer stroke="#ddccee" />
-  </Rule>
-</Style>
-<Layer name="sealane"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>sealane-lane</StyleName>  </Layer>
 
 <Style name="buoy-fixme" filter-mode="first">
   <Rule>
@@ -391,38 +346,33 @@
 <Style name="buoy-float" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'buoy_safe_water') and ([seamark:buoy_safe_water:colour_pattern] = 'vertical') and ([seamark:topmark:shape] = 'sphere') and ([seamark:buoy_safe_water:colour] = 'red;white')</Filter>
-    <MarkersSymbolizer file="img/Pillar_Red_White.svg" allow-overlap="true" transform="scale(0.21,0.21)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([type] = 'buoy_safe_water') and ([seamark:buoy_safe_water:colour_pattern] = 'vertical') and ([seamark:topmark:shape] = 'sphere')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.21,0.21)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'buoy_safe_water') and ([seamark:buoy_safe_water:colour_pattern] = 'vertical') and ([seamark:buoy_safe_water:colour] = 'red;white')</Filter>
-    <MarkersSymbolizer file="img/Pillar_Red_White.svg" allow-overlap="true" transform="scale(0.21,0.21)" />
+    <MarkersSymbolizer file="img/Pillar_Red_White.svg" allow-overlap="true" transform="scale(0.12,0.12)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([type] = 'buoy_lateral') and ([seamark:buoy_lateral:colour] = 'red')</Filter>
+    <MarkersSymbolizer file="img/Pillar_Red.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'buoy_lateral') and ([seamark:buoy_lateral:colour] = 'green')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.25,0.25)" />
+    <MarkersSymbolizer file="img/Pillar_Green.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'buoy_safe_water') and ([seamark:buoy_safe_water:colour_pattern] = 'vertical')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.21,0.21)" />
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.12,0.12)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'buoy_lateral')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.25,0.25)" />
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.1,0.1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([type] = 'buoy_safe_water')</Filter>
-    <MarkersSymbolizer allow-overlap="true" transform="scale(0.21,0.21)" />
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.12,0.12)" />
   </Rule>
 </Style>
 <Layer name="buoy"
@@ -431,5 +381,58 @@
     <StyleName>buoy-lights</StyleName>
     <StyleName>buoy-name</StyleName>
     <StyleName>buoy-fixme</StyleName>  </Layer>
+
+<Style name="light-fixme" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <Filter>([seamark:fixme] = 'please_fix_position')</Filter>
+    <MarkersSymbolizer allow-overlap="true" stroke="#ffff00" stroke-opacity="0.8" stroke-width="1" width="12" height="12" opacity="0.15" fill="#ffff00" />
+  </Rule>
+</Style>
+<Style name="light-name" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <TextSymbolizer allow-overlap="true" dx="7" dy="-1" face-name="Noto Sans CJK JP Regular" ><![CDATA[[seamark:name]]]></TextSymbolizer>
+  </Rule>
+</Style>
+<Style name="light-size" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <Filter>([type] = 'light_major')</Filter>
+    <MarkersSymbolizer allow-overlap="true" file="img/Light_Major.svg" transform="scale(0.15,0.15)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([type] = 'light_minor')</Filter>
+    <MarkersSymbolizer allow-overlap="true" file="img/Light_Minor.svg" transform="scale(0.1,0.1)" />
+  </Rule>
+</Style>
+<Style name="light-color" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([seamark:light:colour] = 'red')</Filter>
+    <MarkersSymbolizer file="img/Light_Red_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([seamark:light:colour] = 'green')</Filter>
+    <MarkersSymbolizer file="img/Light_Green_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([seamark:light:colour] = 'white')</Filter>
+    <MarkersSymbolizer file="img/Light_White_060.svg" allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MarkersSymbolizer allow-overlap="true" transform="scale(0.1,0.1)" />
+  </Rule>
+</Style>
+<Layer name="light"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>light-color</StyleName>
+    <StyleName>light-size</StyleName>
+    <StyleName>light-name</StyleName>
+    <StyleName>light-fixme</StyleName>  </Layer>
 
 </Map>

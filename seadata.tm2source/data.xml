@@ -3,13 +3,23 @@
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
 
 <Parameters>
-  <Parameter name="center">139.7167,35.3634,12</Parameter>
+  <Parameter name="center">139.7341,35.189,11</Parameter>
   <Parameter name="format">pbf</Parameter>
-  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"man_madeway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"beacon","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:beacon_lateral:shape":"String","seamark:beacon_lateral:category":"String","seamark:beacon_lateral:colour":"String","seamark:beacon_lateral:colour:pattern":"String","seamark:beacon_safe_water:shape":"String","seamark:beacon_safe_water:category":"String","seamark:beacon_safe_water:colour":"String","seamark:beacon_safe_water:colour:pattern":"String","seamark:beacon_cardinal:shape":"String","seamark:beacon_cardinal:category":"String","seamark:beacon_cardinal:colour":"String","seamark:beacon_cardinal:colour:pattern":"String","seamark:isolated_danger:shape":"String","seamark:isolated_danger:colour":"String","seamark:isolated_danger:colour:pattern":"String","seamark:beacon_special_purpose:shape":"String","seamark:beacon_special_purpose:colour":"String","seamark:radar_reflector":"String","seamark:light:colour":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"land_polygons","description":"","fields":{"FID":"Number"}},{"id":"light_arc","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:arc_style":"String","seamark:light:object":"String","seamark:light:sector_nr":"String","seamark:light_arc":"String","seamark:light_radial":"Number"}},{"id":"sealane","description":"","fields":{"id":"Number","osm_id":"Number","type":"String","name":"String"}},{"id":"lights","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:light:character":"String","seamark:light:colour":"String","seamark:light:sequence":"String","seamark:light:period":"String","seamark:light:category":"String","seamark:light:height":"String","seamark:light:range":"String","seamark:light_vessel:name":"String","seamark:light_vessel:colour":"String","seamark:light_vessel:colour_pattern":"String","seamark:light_float:name":"String","seamark:light_float:colour":"String","seamark:light_float:colour_pattern":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"buoy","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:buoy_lateral:shape":"String","seamark:buoy_lateral:category":"String","seamark:buoy_lateral:colour":"String","seamark:buoy_lateral:colour_pattern":"String","seamark:buoy_safe_water:shape":"String","seamark:buoy_safe_water:colour":"String","seamark:buoy_safe_water:colour_pattern":"String","seamark:buoy_cardinal:shape":"String","seamark:buoy_cardinal:category":"String","seamark:buoy_cardinal:colour":"String","seamark:buoy_cardinal:colour_pattern":"String","seamark:buoy_isolated_danger:shape":"String","seamark:buoy_isolated_danger:colour":"String","seamark:buoy_isolated_danger:colour_pattern":"String","seamark:buoy_special_purpose:shape":"String","seamark:buoy_special_purpose:colour":"String","seamark:isolated_danger:shape":"String","seamark:isolated_danger:colour":"String","seamark:isolated_danger:colour:pattern":"String","seamark:radar_transponder:category":"String","seamark:radar_reflector":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:light:colour":"String","seamark:fixme":"String"}}]}]]></Parameter>
+  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"land_polygon","description":"","fields":{"FID":"Number"}},{"id":"man_madeway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"sealane","description":"","fields":{"id":"Number","osm_id":"Number","type":"String","name":"String"}},{"id":"beacon","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:beacon_lateral:shape":"String","seamark:beacon_lateral:category":"String","seamark:beacon_lateral:colour":"String","seamark:beacon_lateral:colour:pattern":"String","seamark:beacon_safe_water:shape":"String","seamark:beacon_safe_water:category":"String","seamark:beacon_safe_water:colour":"String","seamark:beacon_safe_water:colour:pattern":"String","seamark:beacon_cardinal:shape":"String","seamark:beacon_cardinal:category":"String","seamark:beacon_cardinal:colour":"String","seamark:beacon_cardinal:colour:pattern":"String","seamark:isolated_danger:shape":"String","seamark:isolated_danger:colour":"String","seamark:isolated_danger:colour:pattern":"String","seamark:beacon_special_purpose:shape":"String","seamark:beacon_special_purpose:colour":"String","seamark:radar_reflector":"String","seamark:light:colour":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"light_arc","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:arc_style":"String","seamark:light:object":"String","seamark:light:sector_nr":"String","seamark:light_arc":"String","seamark:light_radial":"Number"}},{"id":"buoy","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:buoy_cardinal:shape":"String","seamark:buoy_cardinal:category":"String","seamark:buoy_cardinal:colour":"String","seamark:buoy_cardinal:colour_pattern":"String","seamark:buoy_installation:shape":"String","seamark:buoy_installation:category":"String","seamark:buoy_installation:colour":"String","seamark:buoy_installation:colour_pattern":"String","seamark:buoy_isolated_danger:shape":"String","seamark:buoy_isolated_danger:category":"String","seamark:buoy_isolated_danger:colour":"String","seamark:buoy_isolated_danger:colour_pattern":"String","seamark:buoy_lateral:shape":"String","seamark:buoy_lateral:category":"String","seamark:buoy_lateral:colour":"String","seamark:buoy_lateral:colour_pattern":"String","seamark:buoy_safe_water:shape":"String","seamark:buoy_safe_water:colour":"String","seamark:buoy_safe_water:colour_pattern":"String","seamark:buoy_special_purpose:shape":"String","seamark:buoy_special_purpose:colour":"String","seamark:seamark:buoy_installation:category":"String","seamark:radar_reflector":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:light:colour":"String","seamark:fixme":"String"}},{"id":"light","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:light:character":"String","seamark:light:colour":"String","seamark:light:sequence":"String","seamark:light:period":"String","seamark:light:category":"String","seamark:light:height":"String","seamark:light:multiple":"String","seamark:light:range":"String","seamark:light:group":"String","seamark:light_vessel:name":"String","seamark:light_vessel:colour":"String","seamark:light_vessel:colour_pattern":"String","seamark:light_float:name":"String","seamark:light_float:colour":"String","seamark:light_float:colour_pattern":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}}]}]]></Parameter>
   <Parameter name="maxzoom">12</Parameter>
   <Parameter name="minzoom">0</Parameter>
 </Parameters>
 
+
+<Layer name="land_polygon"
+  buffer-size="8"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[/Users/takeo/OSM/data/land_polygons/land_polygons.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
 
 <Layer name="man_madeway"
   buffer-size="8"
@@ -26,56 +36,6 @@
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[]]></Parameter>
        <Parameter name="table"><![CDATA[osm_manmade_ways]]></Parameter>
-       <Parameter name="type"><![CDATA[postgis]]></Parameter>
-       <Parameter name="user"><![CDATA[mapbox]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="beacon"
-  buffer-size="8"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    
-    <Datasource>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
-       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
-       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
-       <Parameter name="geometry_table"><![CDATA[]]></Parameter>
-       <Parameter name="host"><![CDATA[192.168.0.100]]></Parameter>
-       <Parameter name="key_field"><![CDATA[]]></Parameter>
-       <Parameter name="max_size"><![CDATA[512]]></Parameter>
-       <Parameter name="password"><![CDATA[mapbox]]></Parameter>
-       <Parameter name="port"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_beacons]]></Parameter>
-       <Parameter name="type"><![CDATA[postgis]]></Parameter>
-       <Parameter name="user"><![CDATA[mapbox]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="land_polygons"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/takeo/OSM/data/land_polygons/land_polygons.shp]]></Parameter>
-       <Parameter name="type"><![CDATA[shape]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="light_arc"
-  buffer-size="8"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    
-    <Datasource>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
-       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
-       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
-       <Parameter name="geometry_table"><![CDATA[]]></Parameter>
-       <Parameter name="host"><![CDATA[192.168.0.100]]></Parameter>
-       <Parameter name="key_field"><![CDATA[]]></Parameter>
-       <Parameter name="max_size"><![CDATA[512]]></Parameter>
-       <Parameter name="password"><![CDATA[mapbox]]></Parameter>
-       <Parameter name="port"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_light_arc]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>
@@ -101,7 +61,7 @@
     </Datasource>
   </Layer>
 
-<Layer name="lights"
+<Layer name="beacon"
   buffer-size="8"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     
@@ -115,7 +75,27 @@
        <Parameter name="max_size"><![CDATA[512]]></Parameter>
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_lights]]></Parameter>
+       <Parameter name="table"><![CDATA[osm_beacons]]></Parameter>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="user"><![CDATA[mapbox]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="light_arc"
+  buffer-size="8"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    
+    <Datasource>
+       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
+       <Parameter name="geometry_table"><![CDATA[]]></Parameter>
+       <Parameter name="host"><![CDATA[192.168.0.100]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="max_size"><![CDATA[512]]></Parameter>
+       <Parameter name="password"><![CDATA[mapbox]]></Parameter>
+       <Parameter name="port"><![CDATA[]]></Parameter>
+       <Parameter name="table"><![CDATA[osm_light_arc]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>
@@ -136,6 +116,26 @@
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[]]></Parameter>
        <Parameter name="table"><![CDATA[osm_buoys]]></Parameter>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="user"><![CDATA[mapbox]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="light"
+  buffer-size="8"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    
+    <Datasource>
+       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
+       <Parameter name="geometry_table"><![CDATA[]]></Parameter>
+       <Parameter name="host"><![CDATA[192.168.0.100]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="max_size"><![CDATA[512]]></Parameter>
+       <Parameter name="password"><![CDATA[mapbox]]></Parameter>
+       <Parameter name="port"><![CDATA[]]></Parameter>
+       <Parameter name="table"><![CDATA[osm_lights]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>

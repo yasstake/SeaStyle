@@ -10,9 +10,9 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - 139.5099
-  - 35.0086
-  - 9
+  - 134.0744
+  - 33.8795
+  - 8
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
@@ -23,4 +23,6 @@ name: ''
 source: "tmsource:///Users/takeo/OSM/MapboxStyle/seadata.tm2source"
 styles: 
   - semap.mss
+  - light.mss
+  - buoy.mss
 template: ''
