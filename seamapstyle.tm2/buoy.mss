@@ -1,21 +1,23 @@
 //--------  BUOY  -----------------
+#buoy::lights[zoom>12] {
+  marker-allow-overlap: true;
 
-#buoys::reflector[zoom>10]
-{
-  	[seamark:radar_reflector="yes"]
-    {
-    	marker-allow-overlap: true;
-    	marker-file: url(icons/Radar_Reflector_280.png);
-    	marker-transform: scale(0.4, 0.4);
-    	marker-transform: rotate(15);
-    }
-  [seamark:radar_transponder:category="racon"]
-    {
-    	marker-allow-overlap: true;
-    	marker-file: url(icons/Radar_Station.png);
-    	marker-transform: scale(0.27,0.27);
-    }
-}
+  [seamark:light:colour="white"] {
+			marker-file: url(img/Light_White_120.svg);
+  }
+  [seamark:light:colour="green"] {
+			marker-file: url(img/Light_Green_120.svg);
+  }
+  [seamark:light:colour="red"] {
+			marker-file: url(img/Light_Red_120.svg);
+  }
+  [seamark:light:colour="yellow"] {
+			marker-file: url(img/Light_White_120.svg);
+  }  
+  marker-transform: scale(0.1, 0.1);
+ }
+
+
 
 
 #buoy::float[zoom>10] {
@@ -43,27 +45,43 @@
 }
 
 
+#buoy::topmark[zoom>10] {
+  [seamark:topmark:shape = "sphere"] {
+    marker-allow-overlap: true;
+    marker-file: url(img/Top_Sphere_Buoy.svg);
+  }
+  [seamark:topmark:shape = "cone, point up"]{
+    marker-allow-overlap: true;
+    [seamark:topmark:colour = "red"] {
+      marker-file: url(img/Top_Cone_Red_Buoy.svg);
+    }
+    [seamark:topmark:colour = "green"] {
+      marker-file: url(img/Top_Cone_Green_Buoy.svg);
+    }    
+  }
+  marker-transform: scale(0.1);
+}
 
-#buoy::lights[zoom>12] {
-  marker-allow-overlap: true;
 
-  [seamark:light:colour="white"] {
-			marker-file: url(img/Light_White_120.svg);
-  }
-  [seamark:light:colour="green"] {
-			marker-file: url(img/Light_Green_120.svg);
-  }
-  [seamark:light:colour="red"] {
-			marker-file: url(img/Light_Red_120.svg);
-  }
-  [seamark:light:colour="yellow"] {
-			marker-file: url(img/Light_White_120.svg);
-  }  
-  marker-transform: scale(0.2, 0.2);
-  [zoom<13] {
-      marker-transform: scale(0.15, 0.15);
-  }
- }
+#buoy::reflector[zoom>10]
+{
+    [seamark:radar_reflector="yes"]
+    {
+        marker-allow-overlap: true;
+        marker-file: url(img/Radar_Reflector_320.svg);
+    	marker-transform: scale(0.15, 0.15);
+    	marker-transform: rotate(30);
+    }
+
+    [seamark:radar_transponder:category="racon"]
+    {
+    	marker-allow-overlap: true;
+    	marker-file: url(img/Radar_Station.svg);
+    	marker-transform: scale(0.27,0.27);
+    }
+}
+
+
 
 
 
@@ -92,14 +110,51 @@
 }
 
 // -----------  BEACON -----------------
+#beacon::lights[zoom>12] {
+  marker-allow-overlap: true;
+
+  [seamark:light:colour="white"] {
+			marker-file: url(img/Light_White_120.svg);
+  }
+  [seamark:light:colour="green"] {
+			marker-file: url(img/Light_Green_120.svg);
+  }
+  [seamark:light:colour="red"] {
+			marker-file: url(img/Light_Red_120.svg);
+  }
+  [seamark:light:colour="yellow"] {
+			marker-file: url(img/Light_White_120.svg);
+  }  
+  marker-transform: scale(0.1, 0.1);
+ }
+
 
 #beacon::cardinal[zoom>10]
+{
+    marker-allow-overlap: true;
+    [seamark:beacon_cardinal:colour="black;yellow"]{
+        marker-file: url("img/Beacon_Black_Yellow.svg");
+    }
+    [seamark:beacon_cardinal:colour="black;yellow;black"]{
+        marker-file: url("img/Beacon_Black_Yellow_Black.svg");
+    }
+    [seamark:beacon_cardinal:colour="yellow;black"]{
+        marker-file: url("img/Beacon_Yellow_Black.svg");
+    }
+    [seamark:beacon_cardinal:colour="yellow;black;yellow"]{
+        marker-file: url("img/Beacon_Yellow_Black_Yellow.svg");
+    }
+  
+    marker-transform: scale(0.12, 0.12)
+}
+
+
+#beacon::cardinal_top[zoom>10]
 {
   [seamark:beacon_cardinal:category="north"]
     {
       marker-allow-overlap: true;
     	marker-file: url("img/Top_North_Beacon.svg");
-      	marker-transform: scale(0.25,0.25);
     }
    [seamark:beacon_cardinal:category="south"]
     {
@@ -116,15 +171,8 @@
       marker-allow-overlap: true;
     	marker-file: url("img/Top_West_Beacon.svg");
     }
-    [zoom>10]
-    {
-          marker-transform: scale(0.1,0.1);
-    }
-    [zoom>12]
-    {
-          marker-transform: scale(0.15,0.15);
-    }
 
+    marker-transform: scale(0.12,0.12);
 }
 
 
