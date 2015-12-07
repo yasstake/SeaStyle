@@ -1,5 +1,5 @@
 //--------  BUOY  -----------------
-#buoy::lights[zoom>12] {
+#buoy::lights[zoom>11] {
   marker-allow-overlap: true;
 
   [seamark:light:colour="white"] {
@@ -16,7 +16,6 @@
   }  
   marker-transform: scale(0.1, 0.1);
  }
-
 
 
 
@@ -110,7 +109,7 @@
 }
 
 // -----------  BEACON -----------------
-#beacon::lights[zoom>12] {
+#beacon::lights[zoom>11] {
   marker-allow-overlap: true;
 
   [seamark:light:colour="white"] {
@@ -234,4 +233,11 @@
   }  
 }
 
-
+#beacon::name[zoom>13]
+{
+  text-allow-overlap: true;
+  text-name: '[seamark:name]';
+  text-dx: 7;
+  text-dy: -3;
+  text-face-name:@sans;
+ }

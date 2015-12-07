@@ -18,7 +18,7 @@
     [zoom > 11] {
 	  text-face-name: @sans;
       text-name: "'W'";
-      text-placement: line;
+      text-placement: point;
       text-dy:10; 
       text-orientation: 180;
      }
@@ -75,7 +75,9 @@
     	[seamark:light:colour="red"]{ 
 			marker-file: url(img/Light_Red_060.svg);      
       	}
-
+    	[seamark:light:colour="yellow"]{ 
+			marker-file: url(img/Light_White_060.svg);   // shoule be yellow   
+      	}
         marker-transform: scale(0.1, 0.1);
      }
 }
@@ -96,7 +98,7 @@
 
 #light::name[zoom>13]
 {
-  text-allow-overlap: true;
+  text-allow-overlap: false;
   text-name: '[seamark:name]';
   text-dx: 7;
   text-dy: -1;

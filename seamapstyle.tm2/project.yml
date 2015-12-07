@@ -1,4 +1,5 @@
 _prefs: 
+  mapid: yassyass.3cc7c9c6
   saveCenter: true
 _properties: 
   bridge: 
@@ -10,15 +11,15 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - 134.0744
-  - 33.8795
-  - 8
+  - 139.6775
+  - 35.4216
+  - 16
 description: ''
-format: "png8:m=h"
+format: "png8:m=h:c=32"
 interactivity_layer: ''
 layers: null
 maxzoom: 22
-minzoom: 0
+minzoom: 3
 name: ''
 source: "tmsource:///Users/takeo/OSM/MapboxStyle/seadata.tm2source"
 styles: 

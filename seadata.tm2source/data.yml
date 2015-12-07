@@ -3,14 +3,39 @@ _prefs:
   inspector: false
   mapid: ''
   rev: ''
-  saveCenter: true
+  saveCenter: false
 attribution: ''
 center: 
-  - 139.7341
-  - 35.189
-  - 11
+  - 139.8079
+  - 35.2619
+  - 10
 description: ''
 Layer: 
+  - id: barrier_line
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_barrierways
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      name: String
+      osm_id: Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   - id: land_polygon
     Datasource: 
       file: /Users/takeo/OSM/data/land_polygons/land_polygons.shp
@@ -21,6 +46,32 @@ Layer:
     properties: 
       "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: waterarea
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: 5432
+      srid: ''
+      table: osm_waterareas
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      area: Number
+      name: String
+      osm_id: Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   - id: man_madeway
     Datasource: 
       dbname: gis
@@ -29,9 +80,11 @@ Layer:
       geometry_table: ''
       host: 192.168.0.100
       key_field: ''
+      key_field_as_attribute: ''
       max_size: 512
       password: mapbox
       port: ''
+      srid: ''
       table: osm_manmade_ways
       type: postgis
       user: mapbox
@@ -52,9 +105,11 @@ Layer:
       geometry_table: ''
       host: 192.168.0.100
       key_field: ''
+      key_field_as_attribute: ''
       max_size: 512
       password: mapbox
       port: ''
+      srid: ''
       table: osm_sealane
       type: postgis
       user: mapbox
@@ -67,6 +122,36 @@ Layer:
     properties: 
       "buffer-size": 8
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+  - id: light_arc
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_light_arc
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      name: String
+      osm_id: Number
+      "seamark:arc_style": String
+      "seamark:light:object": String
+      "seamark:light:sector_nr": String
+      "seamark:light_arc": String
+      "seamark:light_radial": Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   - id: beacon
     Datasource: 
       dbname: gis
@@ -75,9 +160,11 @@ Layer:
       geometry_table: ''
       host: 192.168.0.100
       key_field: ''
+      key_field_as_attribute: ''
       max_size: 512
       password: mapbox
       port: ''
+      srid: ''
       table: osm_beacons
       type: postgis
       user: mapbox
@@ -113,34 +200,6 @@ Layer:
     properties: 
       "buffer-size": 8
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
-  - id: light_arc
-    Datasource: 
-      dbname: gis
-      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
-      geometry_field: ''
-      geometry_table: ''
-      host: 192.168.0.100
-      key_field: ''
-      max_size: 512
-      password: mapbox
-      port: ''
-      table: osm_light_arc
-      type: postgis
-      user: mapbox
-    description: ''
-    fields: 
-      id: Number
-      name: String
-      osm_id: Number
-      "seamark:arc_style": String
-      "seamark:light:object": String
-      "seamark:light:sector_nr": String
-      "seamark:light_arc": String
-      "seamark:light_radial": Number
-      type: String
-    properties: 
-      "buffer-size": 8
-    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   - id: buoy
     Datasource: 
       dbname: gis
@@ -149,9 +208,11 @@ Layer:
       geometry_table: ''
       host: 192.168.0.100
       key_field: ''
+      key_field_as_attribute: ''
       max_size: 512
       password: mapbox
       port: ''
+      srid: ''
       table: osm_buoys
       type: postgis
       user: mapbox
@@ -200,9 +261,11 @@ Layer:
       geometry_table: ''
       host: 192.168.0.100
       key_field: ''
+      key_field_as_attribute: ''
       max_size: 512
       password: mapbox
       port: ''
+      srid: ''
       table: osm_lights
       type: postgis
       user: mapbox
@@ -234,6 +297,159 @@ Layer:
     properties: 
       "buffer-size": 8
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
-maxzoom: 12
-minzoom: 0
-name: ''
+  - id: depcntL
+    Datasource: 
+      file: /Users/takeo/OSM/data/SHP/7T4BSMP1/depcntL.shp
+      type: shape
+    description: ''
+    fields: 
+      SCAMIN: Number
+      VALDCO: Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
+  - id: seaareP
+    Datasource: 
+      file: /Users/takeo/OSM/data/SHP/7T4BSMP1/seaareP.shp
+      type: shape
+    description: ''
+    fields: 
+      NOBJNM: String
+      OBJNAM: String
+      SCAMIN: Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
+  - id: marine_farm
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_marinefarm
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      "KSJ2:fish_right:product": String
+      name: String
+      osm_id: Number
+      "seamark:marine_farm:category": String
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+  - id: landuse
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_landusages
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      area: Number
+      name: String
+      osm_id: Number
+      type: String
+      z_order: Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+  - id: waterway
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_waterways
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      name: String
+      osm_id: Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+  - id: water
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_waterareas
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      area: Number
+      name: String
+      osm_id: Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+  - id: aeroway
+    Datasource: 
+      dbname: gis
+      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
+      geometry_field: ''
+      geometry_table: ''
+      host: 192.168.0.100
+      key_field: ''
+      key_field_as_attribute: ''
+      max_size: 512
+      password: mapbox
+      port: ''
+      srid: ''
+      table: osm_aeroways
+      type: postgis
+      user: mapbox
+    description: ''
+    fields: 
+      id: Number
+      name: String
+      osm_id: Number
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+maxzoom: 16
+minzoom: 6
+name: seamap
