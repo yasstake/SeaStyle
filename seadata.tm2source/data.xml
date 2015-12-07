@@ -5,44 +5,12 @@
 <Parameters>
   <Parameter name="center">139.8079,35.2619,10</Parameter>
   <Parameter name="format">pbf</Parameter>
-  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"barrier_line","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"land_polygon","description":"","fields":{"FID":"Number"}},{"id":"waterarea","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number"}},{"id":"man_madeway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"sealane","description":"","fields":{"id":"Number","osm_id":"Number","type":"String","name":"String"}},{"id":"light_arc","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:arc_style":"String","seamark:light:object":"String","seamark:light:sector_nr":"String","seamark:light_arc":"String","seamark:light_radial":"Number"}},{"id":"beacon","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:beacon_lateral:shape":"String","seamark:beacon_lateral:category":"String","seamark:beacon_lateral:colour":"String","seamark:beacon_lateral:colour:pattern":"String","seamark:beacon_safe_water:shape":"String","seamark:beacon_safe_water:category":"String","seamark:beacon_safe_water:colour":"String","seamark:beacon_safe_water:colour:pattern":"String","seamark:beacon_cardinal:shape":"String","seamark:beacon_cardinal:category":"String","seamark:beacon_cardinal:colour":"String","seamark:beacon_cardinal:colour:pattern":"String","seamark:isolated_danger:shape":"String","seamark:isolated_danger:colour":"String","seamark:isolated_danger:colour:pattern":"String","seamark:beacon_special_purpose:shape":"String","seamark:beacon_special_purpose:colour":"String","seamark:radar_reflector":"String","seamark:light:colour":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"buoy","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:buoy_cardinal:shape":"String","seamark:buoy_cardinal:category":"String","seamark:buoy_cardinal:colour":"String","seamark:buoy_cardinal:colour_pattern":"String","seamark:buoy_installation:shape":"String","seamark:buoy_installation:category":"String","seamark:buoy_installation:colour":"String","seamark:buoy_installation:colour_pattern":"String","seamark:buoy_isolated_danger:shape":"String","seamark:buoy_isolated_danger:category":"String","seamark:buoy_isolated_danger:colour":"String","seamark:buoy_isolated_danger:colour_pattern":"String","seamark:buoy_lateral:shape":"String","seamark:buoy_lateral:category":"String","seamark:buoy_lateral:colour":"String","seamark:buoy_lateral:colour_pattern":"String","seamark:buoy_safe_water:shape":"String","seamark:buoy_safe_water:colour":"String","seamark:buoy_safe_water:colour_pattern":"String","seamark:buoy_special_purpose:shape":"String","seamark:buoy_special_purpose:colour":"String","seamark:seamark:buoy_installation:category":"String","seamark:radar_reflector":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:light:colour":"String","seamark:fixme":"String"}},{"id":"light","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:light:character":"String","seamark:light:colour":"String","seamark:light:sequence":"String","seamark:light:period":"String","seamark:light:category":"String","seamark:light:height":"String","seamark:light:multiple":"String","seamark:light:range":"String","seamark:light:group":"String","seamark:light_vessel:name":"String","seamark:light_vessel:colour":"String","seamark:light_vessel:colour_pattern":"String","seamark:light_float:name":"String","seamark:light_float:colour":"String","seamark:light_float:colour_pattern":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"depcntL","description":"","fields":{"VALDCO":"Number","SCAMIN":"Number"}},{"id":"seaareP","description":"","fields":{"OBJNAM":"String","NOBJNM":"String","SCAMIN":"Number"}},{"id":"marine_farm","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:marine_farm:category":"String","KSJ2:fish_right:product":"String"}},{"id":"landuse","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number","z_order":"Number"}},{"id":"waterway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"water","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number"}},{"id":"aeroway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}}]}]]></Parameter>
+  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"waterarea","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number"}},{"id":"man_madeway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"sealane","description":"","fields":{"id":"Number","osm_id":"Number","type":"String","name":"String"}},{"id":"light_arc","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:arc_style":"String","seamark:light:object":"String","seamark:light:sector_nr":"String","seamark:light_arc":"String","seamark:light_radial":"Number"}},{"id":"beacon","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:beacon_lateral:shape":"String","seamark:beacon_lateral:category":"String","seamark:beacon_lateral:colour":"String","seamark:beacon_lateral:colour:pattern":"String","seamark:beacon_safe_water:shape":"String","seamark:beacon_safe_water:category":"String","seamark:beacon_safe_water:colour":"String","seamark:beacon_safe_water:colour:pattern":"String","seamark:beacon_cardinal:shape":"String","seamark:beacon_cardinal:category":"String","seamark:beacon_cardinal:colour":"String","seamark:beacon_cardinal:colour:pattern":"String","seamark:isolated_danger:shape":"String","seamark:isolated_danger:colour":"String","seamark:isolated_danger:colour:pattern":"String","seamark:beacon_special_purpose:shape":"String","seamark:beacon_special_purpose:colour":"String","seamark:radar_reflector":"String","seamark:light:colour":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"buoy","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:buoy_cardinal:shape":"String","seamark:buoy_cardinal:category":"String","seamark:buoy_cardinal:colour":"String","seamark:buoy_cardinal:colour_pattern":"String","seamark:buoy_installation:shape":"String","seamark:buoy_installation:category":"String","seamark:buoy_installation:colour":"String","seamark:buoy_installation:colour_pattern":"String","seamark:buoy_isolated_danger:shape":"String","seamark:buoy_isolated_danger:category":"String","seamark:buoy_isolated_danger:colour":"String","seamark:buoy_isolated_danger:colour_pattern":"String","seamark:buoy_lateral:shape":"String","seamark:buoy_lateral:category":"String","seamark:buoy_lateral:colour":"String","seamark:buoy_lateral:colour_pattern":"String","seamark:buoy_safe_water:shape":"String","seamark:buoy_safe_water:colour":"String","seamark:buoy_safe_water:colour_pattern":"String","seamark:buoy_special_purpose:shape":"String","seamark:buoy_special_purpose:colour":"String","seamark:seamark:buoy_installation:category":"String","seamark:radar_reflector":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:light:colour":"String","seamark:fixme":"String"}},{"id":"light","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:name":"String","seamark:light:character":"String","seamark:light:colour":"String","seamark:light:sequence":"String","seamark:light:period":"String","seamark:light:category":"String","seamark:light:height":"String","seamark:light:multiple":"String","seamark:light:range":"String","seamark:light:group":"String","seamark:light_vessel:name":"String","seamark:light_vessel:colour":"String","seamark:light_vessel:colour_pattern":"String","seamark:light_float:name":"String","seamark:light_float:colour":"String","seamark:light_float:colour_pattern":"String","seamark:topmark:shape":"String","seamark:topmark:colour":"String","seamark:fixme":"String"}},{"id":"marine_farm","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","seamark:marine_farm:category":"String","KSJ2:fish_right:product":"String"}},{"id":"landuse","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number","z_order":"Number"}},{"id":"waterway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}},{"id":"water","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String","area":"Number"}},{"id":"aeroway","description":"","fields":{"id":"Number","osm_id":"Number","name":"String","type":"String"}}]}]]></Parameter>
   <Parameter name="maxzoom">16</Parameter>
-  <Parameter name="minzoom">6</Parameter>
+  <Parameter name="minzoom">8</Parameter>
   <Parameter name="name"><![CDATA[seamap]]></Parameter>
 </Parameters>
 
-
-<Layer name="barrier_line"
-  buffer-size="8"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    
-    <Datasource>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
-       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
-       <Parameter name="geometry_field"><![CDATA[]]></Parameter>
-       <Parameter name="geometry_table"><![CDATA[]]></Parameter>
-       <Parameter name="host"><![CDATA[192.168.0.100]]></Parameter>
-       <Parameter name="key_field"><![CDATA[]]></Parameter>
-       <Parameter name="key_field_as_attribute"><![CDATA[]]></Parameter>
-       <Parameter name="max_size"><![CDATA[512]]></Parameter>
-       <Parameter name="password"><![CDATA[mapbox]]></Parameter>
-       <Parameter name="port"><![CDATA[]]></Parameter>
-       <Parameter name="srid"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_barrierways]]></Parameter>
-       <Parameter name="type"><![CDATA[postgis]]></Parameter>
-       <Parameter name="user"><![CDATA[mapbox]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="land_polygon"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/takeo/OSM/data/land_polygons/land_polygons.shp]]></Parameter>
-       <Parameter name="type"><![CDATA[shape]]></Parameter>
-    </Datasource>
-  </Layer>
 
 <Layer name="waterarea"
   buffer-size="8"
@@ -60,7 +28,11 @@
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[5432]]></Parameter>
        <Parameter name="srid"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_waterareas]]></Parameter>
+       <Parameter name="table"><![CDATA[(select * from osm_waterareas 
+    WHERE z(!scale_denominator!) >= 14
+    AND geometry && !bbox!
+ ) as data
+]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>
@@ -198,26 +170,6 @@
     </Datasource>
   </Layer>
 
-<Layer name="depcntL"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/takeo/OSM/data/SHP/7T4BSMP1/depcntL.shp]]></Parameter>
-       <Parameter name="type"><![CDATA[shape]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="seaareP"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/takeo/OSM/data/SHP/7T4BSMP1/seaareP.shp]]></Parameter>
-       <Parameter name="type"><![CDATA[shape]]></Parameter>
-    </Datasource>
-  </Layer>
-
 <Layer name="marine_farm"
   buffer-size="8"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
@@ -234,7 +186,10 @@
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[]]></Parameter>
        <Parameter name="srid"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_marinefarm]]></Parameter>
+       <Parameter name="table"><![CDATA[(select * from osm_marinefarm
+    WHERE z(!scale_denominator!) >= 10
+    AND geometry && !bbox!
+ ) as data]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>
@@ -256,7 +211,11 @@
        <Parameter name="password"><![CDATA[mapbox]]></Parameter>
        <Parameter name="port"><![CDATA[]]></Parameter>
        <Parameter name="srid"><![CDATA[]]></Parameter>
-       <Parameter name="table"><![CDATA[osm_landusages]]></Parameter>
+       <Parameter name="table"><![CDATA[(
+  select * from osm_landusages where
+    z(!scale_denominator!) >= 12 and 
+     geometry && !bbox!
+) as data]]></Parameter>
        <Parameter name="type"><![CDATA[postgis]]></Parameter>
        <Parameter name="user"><![CDATA[mapbox]]></Parameter>
     </Datasource>

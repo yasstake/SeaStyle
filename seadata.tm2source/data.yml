@@ -11,41 +11,6 @@ center:
   - 10
 description: ''
 Layer: 
-  - id: barrier_line
-    Datasource: 
-      dbname: gis
-      extent: -20037508.34,-20037508.34,20037508.34,20037508.34
-      geometry_field: ''
-      geometry_table: ''
-      host: 192.168.0.100
-      key_field: ''
-      key_field_as_attribute: ''
-      max_size: 512
-      password: mapbox
-      port: ''
-      srid: ''
-      table: osm_barrierways
-      type: postgis
-      user: mapbox
-    description: ''
-    fields: 
-      id: Number
-      name: String
-      osm_id: Number
-      type: String
-    properties: 
-      "buffer-size": 8
-    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
-  - id: land_polygon
-    Datasource: 
-      file: /Users/takeo/OSM/data/land_polygons/land_polygons.shp
-      type: shape
-    description: ''
-    fields: 
-      FID: Number
-    properties: 
-      "buffer-size": 8
-    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
   - id: waterarea
     Datasource: 
       dbname: gis
@@ -59,7 +24,11 @@ Layer:
       password: mapbox
       port: 5432
       srid: ''
-      table: osm_waterareas
+      table: |
+        (select * from osm_waterareas 
+            WHERE z(!scale_denominator!) >= 14
+            AND geometry && !bbox!
+         ) as data
       type: postgis
       user: mapbox
     description: ''
@@ -297,29 +266,6 @@ Layer:
     properties: 
       "buffer-size": 8
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
-  - id: depcntL
-    Datasource: 
-      file: /Users/takeo/OSM/data/SHP/7T4BSMP1/depcntL.shp
-      type: shape
-    description: ''
-    fields: 
-      SCAMIN: Number
-      VALDCO: Number
-    properties: 
-      "buffer-size": 8
-    srs: +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
-  - id: seaareP
-    Datasource: 
-      file: /Users/takeo/OSM/data/SHP/7T4BSMP1/seaareP.shp
-      type: shape
-    description: ''
-    fields: 
-      NOBJNM: String
-      OBJNAM: String
-      SCAMIN: Number
-    properties: 
-      "buffer-size": 8
-    srs: +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
   - id: marine_farm
     Datasource: 
       dbname: gis
@@ -333,7 +279,11 @@ Layer:
       password: mapbox
       port: ''
       srid: ''
-      table: osm_marinefarm
+      table: |-
+        (select * from osm_marinefarm
+            WHERE z(!scale_denominator!) >= 10
+            AND geometry && !bbox!
+         ) as data
       type: postgis
       user: mapbox
     description: ''
@@ -360,7 +310,12 @@ Layer:
       password: mapbox
       port: ''
       srid: ''
-      table: osm_landusages
+      table: |-
+        (
+          select * from osm_landusages where
+            z(!scale_denominator!) >= 12 and 
+             geometry && !bbox!
+        ) as data
       type: postgis
       user: mapbox
     description: ''
@@ -451,5 +406,5 @@ Layer:
       "buffer-size": 8
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
 maxzoom: 16
-minzoom: 6
+minzoom: 8
 name: seamap
